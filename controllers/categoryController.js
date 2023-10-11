@@ -46,7 +46,6 @@ exports.updateCategory = async (req, res) => {
     if (!category) {
       return res.status(404).json({ msg: 'Category not found' });
     }
-
     category.name = name;
     await category.save();
     res.json(category);
