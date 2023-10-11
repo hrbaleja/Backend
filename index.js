@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to the database
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     console.log("MongoDB connected");
     // Define your routes
