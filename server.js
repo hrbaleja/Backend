@@ -19,6 +19,9 @@ app.use(cors());
 connectToDb();
 
 // Routes
+app.get('/', (req, res) => {
+  res.send('hello from simple server :)')
+})
 app.use('/api/notes', require('./routes/noteRoute'));
 app.use('/api/user', require('./routes/userRoute'));
 app.use('/api/categories', require('./routes/categoryRoutes'));
