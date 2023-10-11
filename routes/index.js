@@ -6,7 +6,7 @@ const categoryRoutes= require ("./categoryRoutes.js");
 const router = express.Router();
 
 router.use('/notes', noteRoute);
-router.use('/api/user', userRoute);
-router.use('/api/categories', categoryRoutes);
+router.use('/user', userRoute);
+router.use('/categories', categoryRoutes);
 
 module.exports = router;
