@@ -22,7 +22,14 @@ exports.getAllPackages = async (req, res) => {
 exports.getPackageById = async (req, res) => {
   const { id } = req.params;
   try {
-    const package = await Package.findById(id);
+    const package = await Package.findById(id) .populate({
+      path: 'products',
+      select: 'name ', 
+    })
+    .populate({
+      path: 'category',
+      select: 'name', 
+    });
     if (!package) {
       return res.status(404).json({ error: 'Package not found' });
     }

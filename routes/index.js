@@ -10,5 +10,5 @@ router.use('/user', userRoute);
 router.use('/categories', categoryRoutes);
 router.use('/product',productRoutes);
 router.use('/uploads',fileupload)
-router.use('/package',packageRotes)
+router.use('/packages',packageRotes)
 module.exports = router;

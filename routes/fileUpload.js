@@ -28,6 +28,20 @@ router.post('/upload', upload.single('image'), (req, res) => {
   res.json({ imagePath });
 });
 
+router.post('/uploadimages', upload.array('images', 5), (req, res) => {
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({ error: 'No files uploaded' });
+  }
+
+  const fileArray = req.files.map(file => ({
+    imagePath: file.filename,
+    originalName: file.originalname,
+  }));
+
+  res.json({ files: fileArray });
+});
+
+
 router.get('/get-image/:filename', (req, res) => {
   const filename = req.params.filename;
   const imagePath = path.join(__dirname, '../public/uploads', filename);
