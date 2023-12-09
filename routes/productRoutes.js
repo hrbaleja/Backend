@@ -18,4 +18,13 @@ router.put('/:id', productController.updateProduct);
 // Delete a product by ID
 router.delete('/:id', productController.deleteProduct);
 
+// Get the last product by batchno and barcode
+router.get('/last/:1', productController.getLastProduct);
+
+// Count total number of products
+router.get('/count/:2', productController.countProducts);
+
+// Get the last 5 products
+router.get('/recent/:6', productController.getLastSixProducts);
+
 module.exports = router;
